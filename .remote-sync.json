@@ -7,7 +7,7 @@
   "deleteLocal": false,
   "hostname": "192.168.56.2",
   "port": "22",
-  "target": "/home/osboxes/ansible-demos-exercises/ansible/exercise-0-pingtest",
+  "target": "/home/osboxes/ansible-demos-exercises/ansible/",
   "ignore": [
     ".remote-sync.json",
     ".git/**"
