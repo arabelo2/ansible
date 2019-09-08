@@ -1,0 +1,21 @@
+-
+   name: 'Execute two commands on all nodes'
+   hosts: all
+   tasks:
+       -
+           name: 'Execute a date command'
+           command: date
+
+       -
+           name: 'Execute a command to display hosts file'
+           command: cat /etc/hosts
+
+-
+   name: 'Restart all servers at once'
+   hosts: all
+   tasks:
+       -
+           name: 'Restart all servers at once'
+           command: /sbin/shutdown -r now
+           become: yes
+           become_user: osboxes
