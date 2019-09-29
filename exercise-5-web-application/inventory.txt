@@ -1,3 +1,3 @@
 [db_and_web_servers]
-kubenode1 ansible_connection=ssh ansible_ssh_pass=osboxes.org ansible_host=192.168.56.3
-kubenode2 ansible_connection=ssh ansible_ssh_pass=osboxes.org ansible_host=192.168.56.4
+kubenode1 ansible_connection=ssh ansible_ssh_user=osboxes ansible_ssh_pass=osboxes.org ansible_host=192.168.56.3
+kubenode2 ansible_connection=ssh ansible_ssh_user=osboxes ansible_ssh_pass=osboxes.org ansible_host=192.168.56.4

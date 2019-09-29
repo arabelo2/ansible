@@ -1,6 +1,9 @@
 -
   name: Deploy a web application
-  hosts: db_and_web_servers
+  hosts: db_and_web_servers]
+  remote_user: osboxes
+  become: true
+  become_method: sudo
   vars:
     db_name: employee_db
     db_user: db_user
