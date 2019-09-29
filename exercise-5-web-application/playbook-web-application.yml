@@ -1,6 +1,10 @@
 -
   name: Deploy a web application
   hosts: db_and_web_servers
+  vars:
+    db_name: employee_db
+    db_user: db_user
+    db_password: Passw0rd
   tasks:
     - name: Install dependencies
       apt:
@@ -30,16 +34,16 @@
 
     - name: Create application database on the sql server
       mysql_db:
-        name: employee_db
+        name: "{{ db_name }}"
         state: present
 
     - name: Create application database user on the sql server
       mysql_user:
-         name: db_user
-         password: Passw0rd
-         priv: "*.*:ALL"
-         host: "%"
-         state: present
+        name: "{{ db_user }}"
+        password: "{{ db_password }}"
+        priv: "*.*:ALL"
+        host: "%"
+        state: present
 
     - name: Install python dependencies for the Flask application
       pip:
@@ -47,4 +51,12 @@
         state: present
       with_items:
         - flask
-        - flask-mysql 
+        - flask-mysql
+
+    - name: Copy the application code to the target server node
+      copy:
+        src: app.py
+        dest: /opt/app.py
+
+    - name: Start the web application
+      shell: FLASK_APP=/opt/app.py nohup flask run --host=0.0.0.0 &
