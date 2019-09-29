@@ -1,7 +1,2 @@
-<<<<<<< HEAD
 kubenode1 ansible_host=192.168.56.3 ansible_ssh_pass=osboxes.org
 kubenode2 ansible_host=192.168.56.4 ansible_ssh_pass=osboxes.org
-=======
-kubenode1 ansible_host=192.168.56.3 ansible_ssh_pass=osboxes.org
-kubenode2 ansible_host=192.168.56.4 ansible_ssh_pass=osboxes.org
->>>>>>> 28f9d1b8650d8d996632e736ae5ed572081390ac

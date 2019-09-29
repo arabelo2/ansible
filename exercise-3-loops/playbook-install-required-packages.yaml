@@ -1,0 +1,14 @@
+-
+  name: 'Install required packages'
+  hosts: all
+  vars:
+    packages:
+      - yum
+  tasks:
+    -
+      command: 'apt install {{ item }} -y'
+      with_items: '{{ packages }}'
+      register: command_output
+    -
+      debug:
+        msg: "{{ command_output.stdout }}"

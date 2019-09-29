@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 -
    name: 'Print list of fruits'
    hosts: all
@@ -12,18 +11,3 @@
      -
        command: 'echo "{{ item }}"'
        with_items: '{{ fruits }}'
-=======
--
-   name: 'Print list of fruits'
-   hosts: all
-   vars:
-     fruits:
-       - Apple
-       - Banana
-       - Grapes
-       - Orange
-   tasks:
-     -
-       command: 'echo "{{ item }}"'
-       with_items: '{{ fruits }}'
->>>>>>> 28f9d1b8650d8d996632e736ae5ed572081390ac
